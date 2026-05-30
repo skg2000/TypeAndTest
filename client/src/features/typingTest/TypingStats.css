@@ -1,0 +1,29 @@
+.typing-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 8px 0;
+}
+.stat-card {
+  background: var(--accent-muted);
+  border: 1px solid var(--accent-border);
+  padding: 10px 12px;
+  border-radius: var(--r-md);
+  text-align: center;
+}
+.stat-card span {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.stat-card strong {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 480px) { .stat-card strong { font-size: 1.2rem; } }

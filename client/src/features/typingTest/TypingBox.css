@@ -1,0 +1,27 @@
+/* TypingBox is already a flex column — children fill available space */
+.typing-box {
+  /* layout inherited from TypingPage.css; do not set height here */
+}
+
+/* ── Controls: never shrink ── */
+.typing-controls-wrap {
+  flex-shrink: 0;
+}
+
+/* ── Stats bar: never shrink ── */
+.typing-stats-wrap {
+  flex-shrink: 0;
+}
+
+/* ── Display: grows to fill remaining space, no scroll ── */
+.typing-display-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── Input: never shrink ── */
+.typing-input-wrap {
+  flex-shrink: 0;
+  margin-top: 10px;
+}

@@ -1,0 +1,24 @@
+.typing-display {
+  height: 100%;
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  line-height: 1.9;
+  text-align: left;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  user-select: none;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+.correct-char  { color: var(--success); }
+.incorrect-char { color: var(--danger); background: var(--danger-muted); border-radius: 2px; }
+.caret-char {
+  border-left: 2px solid var(--accent);
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { border-color: transparent; } }
+@media (max-width: 768px) { .typing-display { font-size: 1.05rem; padding: 12px 14px; } }

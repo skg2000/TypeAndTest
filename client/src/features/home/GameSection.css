@@ -1,0 +1,90 @@
+.games-section {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.gs-header { text-align: center; margin-bottom: 44px; }
+.gs-title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800;
+  letter-spacing: -0.04em; color: var(--text-h); margin: 8px 0 10px;
+}
+.gs-sub {
+  font-size: 1rem; color: var(--text); max-width: 480px;
+  margin: 0 auto; line-height: 1.7;
+}
+
+/* Last score banner */
+.gs-last-score {
+  display: flex; align-items: center; gap: 10px; justify-content: center;
+  background: var(--warning-muted); border: 1px solid rgba(217,119,6,.3);
+  border-radius: var(--r-lg); padding: 10px 20px; margin-bottom: 24px;
+  font-size: 0.875rem; color: var(--warning);
+}
+.gs-last-score button {
+  background: transparent; border: none; color: var(--text);
+  cursor: pointer; font-size: 1rem; margin-left: auto; padding: 0 4px; line-height: 1;
+}
+
+/* Grid */
+.gs-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+@media (max-width: 860px) { .gs-grid { grid-template-columns: 1fr; } }
+@media (max-width: 580px) { .gs-grid { grid-template-columns: 1fr; } }
+
+/* Card */
+.gs-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-xl); overflow: hidden; cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  display: flex; flex-direction: column; --gc: var(--accent);
+}
+.gs-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gc);
+  box-shadow: 0 16px 48px rgba(0,0,0,.08), 0 0 0 1px var(--gc);
+}
+
+.gs-card-icon {
+  font-size: 3rem; text-align: center;
+  padding: 28px 20px 16px;
+  background: color-mix(in srgb, var(--gc) 10%, transparent);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.22s;
+}
+.gs-card:hover .gs-card-icon { background: color-mix(in srgb, var(--gc) 16%, transparent); }
+
+.gs-card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; gap: 7px; }
+.gs-card-tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gc); }
+.gs-card-title { font-size: 1.1rem; font-weight: 800; color: var(--text-h); margin: 0; letter-spacing: -0.02em; }
+.gs-card-desc { font-size: 0.85rem; color: var(--text); line-height: 1.55; margin: 0; flex: 1; }
+.gs-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 6px; }
+.gs-diff { font-size: 0.75rem; color: var(--text); }
+.gs-play-btn {
+  font-size: 0.8rem; font-weight: 700; color: var(--gc);
+  background: color-mix(in srgb, var(--gc) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gc) 28%, transparent);
+  padding: 5px 14px; border-radius: var(--r-full);
+  transition: background 0.15s;
+}
+.gs-card:hover .gs-play-btn { background: color-mix(in srgb, var(--gc) 22%, transparent); }
+
+/* Active game */
+.gs-active-game {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-xl); padding: 20px; overflow: hidden;
+}
+.gs-active-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
+}
+.gs-active-title { font-size: 1.05rem; font-weight: 800; color: var(--text-h); }
+.gs-back-btn {
+  background: transparent; border: 1px solid var(--border); color: var(--text);
+  padding: 6px 14px; border-radius: var(--r); cursor: pointer; font-size: 0.8rem;
+  font-family: var(--font); transition: border-color var(--t), color var(--t);
+}
+.gs-back-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+.gs-footer-hint { text-align: center; color: var(--text); font-size: 0.8rem; margin-top: 24px; }

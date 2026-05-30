@@ -1,0 +1,46 @@
+.typing-page {
+  height: calc(100vh - 62px);
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.typing-page-header {
+  flex-shrink: 0;
+  padding: 18px 0 12px;
+  text-align: center;
+}
+.typing-page-header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 2px;
+  color: var(--text-h);
+}
+.typing-subtitle { font-size: 0.8rem; color: var(--text); margin: 0; }
+
+/* Card */
+.typing-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+  padding: 20px 26px 16px;
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  cursor: text;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .typing-page { padding: 0 12px 10px; height: calc(100vh - 62px); }
+  .typing-box { padding: 14px 14px 10px; border-radius: var(--r-lg); }
+}

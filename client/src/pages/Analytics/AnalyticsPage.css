@@ -1,0 +1,97 @@
+.analytics-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 72px;
+}
+
+.analytics-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; flex-wrap: wrap;
+  gap: 16px; margin-bottom: 28px;
+}
+.analytics-top h1 { font-size: 1.75rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 4px; }
+.analytics-top p { color: var(--text); font-size: 0.9rem; }
+
+/* Range pills */
+.range-pills { display: flex; gap: 6px; }
+.range-pill {
+  padding: 7px 16px; border-radius: var(--r-full);
+  border: 1px solid var(--border); background: transparent;
+  color: var(--text-2); font-size: 0.8rem; cursor: pointer;
+  font-family: var(--font); transition: border-color var(--t), color var(--t), background var(--t);
+}
+.range-pill:hover { border-color: var(--border-2); color: var(--text-h); }
+.range-pill.active {
+  background: var(--accent); border-color: var(--accent);
+  color: var(--accent-fg); font-weight: 700;
+}
+
+/* Summary pills */
+.analytics-pills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px; margin-bottom: 28px;
+}
+.stat-pill {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 16px 14px; text-align: center;
+  transition: border-color var(--t), transform var(--t), box-shadow var(--t);
+  cursor: default;
+}
+.stat-pill:hover { border-color: var(--accent-border); transform: translateY(-2px); box-shadow: var(--shadow); }
+.pill-value {
+  font-size: 1.55rem; font-weight: 900; line-height: 1;
+  color: var(--accent); font-variant-numeric: tabular-nums;
+}
+.pill-label {
+  font-size: 0.7rem; font-weight: 600; color: var(--text);
+  margin-top: 5px; text-transform: uppercase; letter-spacing: 0.7px;
+}
+
+/* Chart grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 14px; margin-bottom: 14px;
+}
+@media (max-width: 680px) { .charts-grid { grid-template-columns: 1fr; } }
+
+.chart-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 22px 20px 16px;
+}
+.chart-card h3 {
+  font-size: 0.72rem; font-weight: 700; color: var(--text);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+}
+
+/* Heatmap */
+.heatmap-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 22px 20px;
+  margin-bottom: 14px;
+}
+.keyboard-heatmap {
+  display: flex; flex-wrap: wrap; gap: 5px;
+  margin: 8px 0; font-family: var(--font-mono);
+}
+.key-cap {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: var(--r-sm);
+  border: 1px solid var(--border); font-size: 0.82rem; font-weight: 600;
+  color: var(--text-h); text-transform: uppercase;
+  cursor: default; transition: transform var(--t);
+}
+.key-cap:hover { transform: scale(1.18); z-index: 1; }
+.heatmap-legend { font-size: 0.72rem; color: var(--text); margin-top: 8px; }
+
+/* Radar chart */
+.chart-radar { display: flex; flex-direction: column; align-items: center; }
+.chart-radar canvas { max-width: 300px !important; max-height: 300px !important; }
+
+/* Empty / loading */
+.no-data, .loading-msg {
+  text-align: center; padding: 80px 0;
+  color: var(--text); font-size: 0.95rem;
+}
+.no-data-icon { font-size: 2.5rem; margin-bottom: 12px; }

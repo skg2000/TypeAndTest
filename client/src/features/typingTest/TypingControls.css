@@ -1,0 +1,29 @@
+.typing-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.control-group { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+
+.typing-controls button {
+  padding: 6px 13px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-2);
+  border-radius: var(--r);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: border-color var(--t), color var(--t), background var(--t);
+  white-space: nowrap;
+  font-family: var(--font);
+}
+.typing-controls button:hover { border-color: var(--border-2); color: var(--text-h); background: var(--surface-2); }
+.typing-controls button.active {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+}
