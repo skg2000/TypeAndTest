@@ -29,6 +29,13 @@ app.use("/api/friends",      friendsRoutes);
 app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/lessons",      lessonRoutes);
 
-app.get("/", (req, res) => res.send("Typing Platform API Running"));
+// API root message
+app.get("/api", (req, res) => res.send("Typing Platform API Running"));
+
+// SPA fallback: serve index.html for any non-API route (client-side routing)
+app.get("*(/*)?", (req, res, next) => {
+	if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) return next();
+	res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 export default app;

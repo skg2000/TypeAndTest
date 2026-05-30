@@ -1,0 +1,22 @@
+services:
+  - type: static
+    name: type-and-test-client
+    env: node
+    branch: main
+    buildCommand: npm --prefix client run build
+    publishPath: client/dist
+    autoDeploy: true
+
+  - type: web
+    name: type-and-test-api
+    env: node
+    plan: free
+    branch: main
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: MONGO_URI
+      - key: JWT_SECRET
+      - key: NODE_ENV
+      - key: PORT
