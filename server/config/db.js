@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 
 const connectDB = async () => {
+  const mongoUri = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/typing-platform";
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/typing-platform");
+    await mongoose.connect(mongoUri);
 
     console.log("MongoDB Connected");
   } catch (err) {

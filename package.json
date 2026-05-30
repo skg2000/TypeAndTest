@@ -7,11 +7,16 @@
     "install:all": "npm install --prefix client && npm install --prefix server",
     "client": "npm --prefix client run dev",
     "server": "npm --prefix server run start",
+    "start": "node server/server.js",
+    "build:client": "npm --prefix client run build",
+    "build:copy": "npx cpx \"client/dist/**\" server/public",
+    "build": "npm run build:client && npm run build:copy",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "concurrently": "^8.0.0"
+    "concurrently": "^8.0.0",
+    "cpx": "^1.5.0"
   },
   "author": "",
   "license": "ISC"
