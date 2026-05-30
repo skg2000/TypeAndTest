@@ -33,8 +33,13 @@ app.use("/api/lessons",      lessonRoutes);
 app.get("/api", (req, res) => res.send("Typing Platform API Running"));
 
 // SPA fallback: serve index.html for any non-API route (client-side routing)
-app.get("*(/*)?", (req, res, next) => {
-	if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) return next();
+app.use((req, res, next) => {
+	if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) {
+		return next();
+	}
+	if (req.method !== 'GET') {
+		return next();
+	}
 	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
